@@ -99,7 +99,7 @@ Ingrese título del libro: Cien años de soledad
 4. Procesar Devolución
 Ingrese ID del usuario: 12345
 
-[ PRÉSTA{MOS ACTIVOS ]
+[ PRÉSTAMOS ACTIVOS ]
 %     TÍTULO                           FECHA PRÉSTAMO  ESTADO
 1     Cien años de soledad            08/11/2025      VENCIDO
 
@@ -110,7 +110,6 @@ Devolución procesada exitosamente.
 SANCIÓN APLICADA POR RETRASO
    Días de retraso: 5
    Fecha fin de sanción: 28/11/2025
----
 
 
   DIAGRAMA DE CLASES
@@ -397,4 +396,9 @@ DIAGRAMA DE FRECUENCIA: Realizar un prestamo
      │               │                │                │                │               │
      │ Confirmación  │                │                │                │               │
      │<──────────────┤                │                │                │               │
-     │               │                │                │                │               │
+
+
+<img width="795" height="682" alt="image" src="https://github.com/user-attachments/assets/b8a9bb2c-83fc-49c4-9883-febf6e6be77d" />
+<img width="722" height="798" alt="image" src="https://github.com/user-attachments/assets/1494d0b0-d434-483e-9ed2-b55f2127009e" />
+
+
