@@ -399,6 +399,7 @@ DIAGRAMA DE FRECUENCIA: Realizar un prestamo
 
 
 <img width="795" height="682" alt="image" src="https://github.com/user-attachments/assets/b8a9bb2c-83fc-49c4-9883-febf6e6be77d" />
+<img width="752" height="650" alt="image" src="https://github.com/user-attachments/assets/801fa2cc-833a-46fa-87aa-f9062e094f6f" />
 <img width="722" height="798" alt="image" src="https://github.com/user-attachments/assets/1494d0b0-d434-483e-9ed2-b55f2127009e" />
 
 
