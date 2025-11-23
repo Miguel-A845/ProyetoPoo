@@ -188,12 +188,19 @@ PrestamoService --> Devolucion
 
   
 CU-01 – Registrar Usuario
+
 Identificador: CU-01
+
 Descripción: Permite al bibliotecario registrar un nuevo usuario (estudiante o docente) en el sistema.
+
 Actor Primario: Bibliotecario
+
 Actor Secundario: —
+
 Precondiciones:
+
  1 El sistema debe estar en ejecución.
+ 
 Flujo Principal:
  l bibliotecario selecciona la opción “Registrar Usuario”.
  2 sistema solicita nombre, ID y tipo de usuario.
