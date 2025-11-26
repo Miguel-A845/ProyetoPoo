@@ -747,9 +747,9 @@ public class Sistema {
 }
 
 
-## 🎨 Patrones de Diseño Implementados
+##  Patrones de Diseño Implementados
 
-### 1. **Singleton Pattern** 🔐
+### 1. **Singleton Pattern** 
 
 **Propósito**: Garantizar que una clase tenga una sola instancia y proporcionar un punto de acceso global.
 
@@ -787,28 +787,33 @@ Sistema sistema2 = Sistema.getInstance();
 
 **Preguntas generales para todos los proyectos:**
 
-**1.	Principios de POO**
-¿Cómo aplicaste los principios de abstracción, encapsulación, herencia y polimorfismo en tu proyecto?
+### 1.	**Principios de POO**
+¿Cómo aplicaste los principios de abstracción, encapsulación, herencia y polimorfismo en tu proyecto?.
 R// Abstracción: Creando interfaces como ServicioDeLibros, ServicioDeUsuarios y más. Encapsulación: Todos los atributos son privados y solo se puede acceder a ellos mediante getters/setters. Herencia: En las excepciones personalizadas ya que extienden de Exception. Polimorfismo: Las clases LibroP2, UsuarioP2, ServicioP2, SancionP2 y PersistenciaArchivos implementan sus respectivas interfaces, permitiendo usar diferentes implementaciones de forma intercambiable.
+
 ¿Puedes explicar qué parte de tu código representa una clase base y qué clases derivadas extienden su funcionalidad?
 R// Clase base: Excepción y de ella derivan las excepciones personalizadas, ya sean UsuarioDuplicadoException o ErrorCargaException.
+
 ¿Dónde aplicaste polimorfismo dinámico y por qué?
 R// En la clase sistema, donde las respectivas referencias apuntan a UsuarioP2, LibroP2, SancionP2 y ServicioP2. Esto permite intercambiar la implementación sin modificar el código cliente
 
-**2.	Relación entre clases**
+### 2.	**Relación entre clases**
 ¿Puedes describir las relaciones (asociación, composición, agregación) entre las clases principales de tu sistema?
-R// Composición: Usuario tiene List<Prestamo> y List<Sancion>. Si el usuario se destruye sus prestamos y sanciones también
-Asociación: Préstamo asocia a un Usuario con un Libro. Devolución asocia una fecha de devolución con un Prestamo
-Agregación: Sistema agrega los servicios. Los servicios pueden seguir existiendo independientemente del Sistema
-Composición: GestorPersistencia contiene una instancia de ServicioPersistencia y un sistema
+R//
+- Composición: Usuario tiene List<Prestamo> y List<Sancion>. Si el usuario se destruye sus prestamos y sanciones también
+- Asociación: Préstamo asocia a un Usuario con un Libro. Devolución asocia una fecha de devolución con un Prestamo
+- Agregación: Sistema agrega los servicios. Los servicios pueden seguir existiendo independientemente del Sistema
+- Composición: GestorPersistencia contiene una instancia de ServicioPersistencia y un sistema
+ 
 ¿Qué criterios usaste para decidir cuándo usar una interfaz y cuándo una clase abstracta?
 R// Para las interfaces definen un “que hace” sin saber el “como lo hace”, esto permite mayor flexibilidad ya que cualquier clase puede implementar ese servicio. Sobre las clases abstractas no las use en este programa
+
 ¿Implementaste sobrecarga o sobreescritura de métodos? Muestra un ejemplo.
 R// Si, es esta parte 
 <img width="672" height="177" alt="image" src="https://github.com/user-attachments/assets/b290c58e-c1a0-42c9-b951-fecdb1dd564c" />
 
 
-**3.	Diseño UML**
+### 3.	**Diseño UML**
 ¿Tu diagrama de clases refleja fielmente la estructura del código fuente? ¿Puedes mostrar un caso en donde hiciste cambios en el diseño durante la implementación?
 R// Si, el diagrama UML debe mostrar
  1.	Clases Principales
@@ -816,50 +821,56 @@ R// Si, el diagrama UML debe mostrar
  3.	Implementaciones y sus servicios de implementaciones
  4.	Enum Tipo
  5.	Clase sistema con Patrón Singleton
- 6.	Relaciones de composición y asociación 
+ 6.	Relaciones de composición y asociación
+    
 ¿Qué herramienta utilizaste para crear los diagramas? ¿Cómo te aseguraste de que fueran coherentes con el modelo implementado?
 R// Si, Planttext
 
-**4.	Aplicación de Patrones de Diseño**
+### 4.	**Aplicación de Patrones de Diseño**
 ¿Qué patrón o patrones de diseño aplicaste en tu solución (por ejemplo, Singleton, Factory Method, Observer)? ¿Cuál fue la motivación detrás de esa elección?
 R// Singleton y fue para tener una sola instancia de biblioteca en todo el sistema, para poder manejar la trazabilidad en el programa
+
 ¿Puedes explicar el patrón que implementaste y señalar su ubicación en tu código?
 R// Singleton, en la clase Sistema. Asegura que solo exista una instancia del sistema mediante un constructor privado, una variable estática y un método llamado getInstance() que controla la creacion
 
-**5.	Principios SOLID**
+### 5.	**Principios SOLID**
 ¿Qué principios de SOLID aplicaste? Menciona uno y explícalo usando una parte específica de tu proyecto.
-R// Single Responsability, Cada una de las clases creadas tiene su respectiva responsabilidad clara, un ejemplo de esto son las clases de devolución, préstamo, libro y usuario
-¿Qué decisiones de diseño tomaste para garantizar un bajo acoplamiento y alta cohesión en tu sistema?
-R// Para el bajo acoplamiento se implemento el uso de interfaces y para la alta cohesión cada clase agrupa funcionalidades relacionadas. PersistenciaArchivos solo maneja archivos CSV
+R// Single Responsability, Cada una de las clases creadas tiene su respectiva responsabilidad clara, un ejemplo de esto son las clases de devolución, préstamo, libro y usuario.
 
-**6.	Excepciones y manejo de errores**
+¿Qué decisiones de diseño tomaste para garantizar un bajo acoplamiento y alta cohesión en tu sistema?
+R// Para el bajo acoplamiento se implemento el uso de interfaces y para la alta cohesión cada clase agrupa funcionalidades relacionadas. PersistenciaArchivos solo maneja archivos CSV.
+
+### 6.	**Excepciones y manejo de errores**
 ¿Implementaste excepciones personalizadas? ¿En qué parte del sistema se lanzan y para qué casos?
-R// Si, por ejemplo UsuarioDuplicadoException: Se lanza en RegistrarUsuario() si ya existe un usuario con ese ID. LibroNoEncontradoException: Se lanza en BuscarPorTitulo() cuando no se encuentra un libro, etc etc
+R// Si, por ejemplo UsuarioDuplicadoException: Se lanza en RegistrarUsuario() si ya existe un usuario con ese ID. LibroNoEncontradoException: Se lanza en BuscarPorTitulo() cuando no se encuentra un libro, etc etc.
+
 ¿Cómo aseguras que el sistema no se detenga ante errores inesperados?
 R// Mediante el bloque Try – catch en puntos críticos donde pueden ocurrir estos errores
 
-**7.	Persistencia**
+### 7.	**Persistencia**
 ¿Cómo implementaste la persistencia de datos? ¿Usaste serialización o archivos de texto/JSON?
 R// Fue usando CSV mediante la clase PersistenciaArchivos
+
 ¿Qué clases son responsables de leer y escribir información persistente?
 R// La clase PersistenciaArchivos que implementa ServicioPersistencia y realiza todas las operaciones de lectura y la clase GestorPersistencia que coordina cuando se debe guardar
 
-**8.	Interfaz de Usuario**
+### 8.	**Interfaz de Usuario**
 ¿Qué tecnología usaste para construir la interfaz (Swing, JavaFX, consola, etc.)?
-R// Consola simplemente
-¿Cómo se relaciona tu interfaz con la lógica de negocio? ¿Aplicaste separación de responsabilidades?
-R// Si, el Main (Muestra menús, captura la entrada de usuarios y formatea la salida), Servicios (Valida reglas del negocio, procesa prestamos, devoluciones, sanciones y gestiona el catálogo) y PersistenciaArchivos (Lee archivos y maneja el formato CSV)
+R// Consola simplemente.
 
-**9.	Calidad del Código**
+¿Cómo se relaciona tu interfaz con la lógica de negocio? ¿Aplicaste separación de responsabilidades?
+R// Si, el Main (Muestra menús, captura la entrada de usuarios y formatea la salida), Servicios (Valida reglas del negocio, procesa prestamos, devoluciones, sanciones y gestiona el catálogo) y PersistenciaArchivos (Lee archivos y maneja el formato CSV).
+
+### 9.	**Calidad del Código**
 ¿Cómo estructuraste el código para mantenerlo legible y modular?
-R// Métodos pequeños con responsabilidades únicas, nombres exactos, comentarios, separación en múltiples clases y mas 
+R// Métodos pequeños con responsabilidades únicas, nombres exactos, comentarios, separación en múltiples clases y mas.
+
 ¿Qué convenciones seguiste para nombrar tus clases, atributos y métodos?
 R// Simplemente los nombraba por lo que hacían y para no perderme 
 
-**10.	Cumplimiento de Requisitos Funcionales**
+### 10.	**Cumplimiento de Requisitos Funcionales**
 ¿Qué requisitos adicionales o extras implementaste?
-R// Sistema de sanciones automáticos por retraso, validación de disponibilidad de libros antes de prestar, sistema de búsqueda por título, estadísticas del inventario, consulta de historial por préstamo y mas
+R// Sistema de sanciones automáticos por retraso, validación de disponibilidad de libros antes de prestar, sistema de búsqueda por título, estadísticas del inventario, consulta de historial por préstamo y mas.
+
 ¿Qué funcionalidad fue más difícil de desarrollar y por qué?
-R// la de persistencia de los datos, más que todo porque es un tema que todavía no termino de entender 
-
-
+R// la de persistencia de los datos, más que todo porque es un tema que todavía no termino de entender.
