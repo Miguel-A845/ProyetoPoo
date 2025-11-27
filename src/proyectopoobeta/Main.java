@@ -55,17 +55,17 @@ public class Main {
             } catch (UsuarioNoEncontradoException e){
                 System.out.println("ERROR: "+ e.getMessage());
             } catch (UsuarioDuplicadoException e) {
-                System.err.println("\n❌ Error: " + e.getMessage());
+                System.err.println("\n Error: " + e.getMessage());
             } catch (LibroNoEncontradoException e) {
-                System.err.println("\n❌ Error: " + e.getMessage());
+                System.err.println("\n Error: " + e.getMessage());
             } catch (PrestamoYaDevueltoException e) {
-                System.err.println("\n❌ Error: " + e.getMessage());
+                System.err.println("\n Error: " + e.getMessage());
             } catch (ErrorGuardadoException e) {
-                System.err.println("\n❌ Error al guardar: " + e.getMessage());
+                System.err.println("\n Error al guardar: " + e.getMessage());
             } catch (ErrorCargaException e) {
-                System.err.println("\n❌ Error al cargar: " + e.getMessage());
+                System.err.println("\n Error al cargar: " + e.getMessage());
             } catch (Exception e) {
-                System.err.println("\n❌ Error inesperado: " + e.getMessage());
+                System.err.println("\n Error inesperado: " + e.getMessage());
                 e.printStackTrace();
             }
                 
